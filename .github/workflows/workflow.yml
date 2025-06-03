@@ -31,6 +31,7 @@ jobs:
         run: npm test
 
       - uses: actions/upload-artifact@v4
+        if: failure() || success()
         with:
           name: moch-test-result
           path: test-results.xml
